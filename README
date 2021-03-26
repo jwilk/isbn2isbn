@@ -1,0 +1,19 @@
+.. code:: console
+
+   $ isbn2isbn --help
+   usage: isbn2isbn [-h] [-n {10,13}] ISBN
+
+   positional arguments:
+     ISBN
+
+   optional arguments:
+     -h, --help  show this help message and exit
+     -n {10,13}  ISBN type to convert to (default: 13)
+
+   $ isbn2isbn -n 13 8371520883
+   9788371520884
+
+   $ isbn2isbn -n 10 9788371520884
+   8371520883
+
+.. vim:ft=rst ts=3 sts=3 sw=3 et

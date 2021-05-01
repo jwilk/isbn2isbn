@@ -20,7 +20,8 @@ def main():
         10: stdnum.isbn.to_isbn10,
         13: stdnum.isbn.to_isbn13,
     }[n]
-    isbn = convert(options.isbn)
+    isbn = stdnum.isbn.validate(options.isbn)
+    isbn = convert(isbn)
     print(isbn)
 
 if __name__ == '__main__':

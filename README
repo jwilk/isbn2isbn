@@ -6,7 +6,7 @@
    positional arguments:
      ISBN
 
-   optional arguments:
+   options:
      -h, --help  show this help message and exit
      -n {10,13}  ISBN type to convert to (default: 13)
      -f          use standard presentation format

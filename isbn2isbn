@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: MIT
 
 import argparse
+import sys
 
 import stdnum.isbn
 
@@ -12,6 +13,9 @@ import stdnum.isbn
 
 def main():
     ap = argparse.ArgumentParser()
+    if sys.version_info < (3, 10):
+        # https://bugs.python.org/issue9694
+        ap._optionals.title = 'options'
     ap.add_argument('-n', choices=('10', '13'), default='13', help='ISBN type to convert to (default: 13)')
     ap.add_argument('-f', action='store_true', help='use standard presentation format')
     ap.add_argument('isbn', metavar='ISBN')

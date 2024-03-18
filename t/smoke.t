@@ -9,20 +9,20 @@ prog="$pdir/isbn2isbn"
 declare -i n
 run()
 {
-	out=$("$prog" "$@")
+    out=$("$prog" "$@")
 }
 expect()
 {
-	n+=1
-	xout="$1"
-	diff=$(diff -u <(cat <<< "$xout") <(cat <<< "$out")) || true
-	if [ -z "$diff" ]
-	then
-		echo "ok $n"
-	else
-		sed -e 's/^/# /' <<< "$diff"
-		echo 'not ok $n'
-	fi
+    n+=1
+    xout="$1"
+    diff=$(diff -u <(cat <<< "$xout") <(cat <<< "$out")) || true
+    if [ -z "$diff" ]
+    then
+        echo "ok $n"
+    else
+        sed -e 's/^/# /' <<< "$diff"
+        echo 'not ok $n'
+    fi
 }
 echo 1..2
 run -n 13 8371520883
